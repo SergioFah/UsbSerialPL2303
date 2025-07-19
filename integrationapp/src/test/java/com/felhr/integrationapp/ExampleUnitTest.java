@@ -1,4 +1,4 @@
-package com.felhr.integrationapp;
+package com.sergiofah.integrationapp;
 
 import org.junit.Test;
 

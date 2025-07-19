@@ -1,4 +1,4 @@
-package com.felhr.examplemultipleports;
+package com.sergiofah.examplemultipleports;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.felhr.examplemultipleports", appContext.getPackageName());
+        assertEquals("com.sergiofah.examplemultipleports", appContext.getPackageName());
     }
 }

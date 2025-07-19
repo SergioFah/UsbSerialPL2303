@@ -1,4 +1,4 @@
-package com.felhr.examplestreams;
+package com.sergiofah.examplestreams;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;

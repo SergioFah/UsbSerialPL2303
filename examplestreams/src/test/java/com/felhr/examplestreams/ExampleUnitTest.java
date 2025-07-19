@@ -1,4 +1,4 @@
-package com.felhr.examplestreams;
+package com.sergiofah.examplestreams;
 
 import org.junit.Test;
 

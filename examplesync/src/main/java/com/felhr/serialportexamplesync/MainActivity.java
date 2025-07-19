@@ -1,4 +1,4 @@
-package com.felhr.serialportexamplesync;
+package com.sergiofah.serialportexamplesync;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;

@@ -1,4 +1,4 @@
-package com.felhr.deviceids;
+package com.sergiofah.deviceids;
 
 import org.junit.Assert;
 import org.junit.Test;

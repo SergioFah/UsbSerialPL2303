@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.felhr.integrationapp"
+<manifest package="com.sergiofah.integrationapp"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature android:name="android.hardware.usb.host"
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.felhr.integrationapp.UsbService"
+            android:name="com.sergiofah.integrationapp.UsbService"
             android:enabled="true">
         </service>
         <service
-            android:name="com.felhr.integrationapp.UsbSyncService"
+            android:name="com.sergiofah.integrationapp.UsbSyncService"
             android:enabled="true">
         </service>
     </application>

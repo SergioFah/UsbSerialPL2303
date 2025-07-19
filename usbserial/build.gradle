@@ -4,7 +4,7 @@ def artifact = "usbserial.jar"
 
 android {
 
-    group = 'com.felhr.usbserial'
+    group = 'com.sergiofah.usbserial'
     version = project.VERSION_NAME
 
     compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)

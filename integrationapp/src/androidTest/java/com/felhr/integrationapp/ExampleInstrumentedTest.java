@@ -1,4 +1,4 @@
-package com.felhr.integrationapp;
+package com.sergiofah.integrationapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.felhr.integrationapp", appContext.getPackageName());
+        assertEquals("com.sergiofah.integrationapp", appContext.getPackageName());
     }
 }

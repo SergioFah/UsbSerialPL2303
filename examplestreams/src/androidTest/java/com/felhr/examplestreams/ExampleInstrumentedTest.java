@@ -1,4 +1,4 @@
-package com.felhr.examplestreams;
+package com.sergiofah.examplestreams;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.felhr.examplestreams", appContext.getPackageName());
+        assertEquals("com.sergiofah.examplestreams", appContext.getPackageName());
     }
 }

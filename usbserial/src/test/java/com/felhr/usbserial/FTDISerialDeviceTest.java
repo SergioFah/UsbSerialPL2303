@@ -1,4 +1,4 @@
-package com.felhr.usbserial;
+package com.sergiofah.usbserial;
 
 import org.junit.Assert;
 import org.junit.Test;

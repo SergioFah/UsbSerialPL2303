@@ -1,6 +1,6 @@
-package com.felhr.tests.utils;
+package com.sergiofah.tests.utils;
 
-import com.felhr.utils.ProtocolBuffer;
+import com.sergiofah.utils.ProtocolBuffer;
 
 import junit.framework.TestCase;
 

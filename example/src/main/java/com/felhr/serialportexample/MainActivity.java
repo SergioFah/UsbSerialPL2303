@@ -1,4 +1,4 @@
-package com.felhr.serialportexample;
+package com.sergiofah.serialportexample;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;

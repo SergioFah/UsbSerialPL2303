@@ -1,4 +1,4 @@
-package com.felhr.examplemultipleports;
+package com.sergiofah.examplemultipleports;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.felhr.utils.HexData;
+import com.sergiofah.utils.HexData;
 
 import java.lang.ref.WeakReference;
 import java.util.Set;

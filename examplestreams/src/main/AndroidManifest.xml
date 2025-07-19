@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.felhr.examplestreams"
+<manifest package="com.sergiofah.examplestreams"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature android:name="android.hardware.usb.host"
@@ -21,7 +21,7 @@
         </activity>
 
         <service
-            android:name="com.felhr.examplestreams.UsbService"
+            android:name="com.sergiofah.examplestreams.UsbService"
             android:enabled="true">
         </service>
 

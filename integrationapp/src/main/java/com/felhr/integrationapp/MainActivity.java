@@ -1,4 +1,4 @@
-package com.felhr.integrationapp;
+package com.sergiofah.integrationapp;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -17,11 +17,11 @@ import android.widget.Toast;
 import java.lang.ref.WeakReference;
 import java.util.Set;
 
-import static com.felhr.integrationapp.UsbService.MESSAGE_TEST_1;
-import static com.felhr.integrationapp.UsbService.MESSAGE_TEST_2;
-import static com.felhr.integrationapp.UsbService.MESSAGE_TEST_3;
-import static com.felhr.integrationapp.UsbService.MESSAGE_TEST_4;
-import static com.felhr.integrationapp.UsbService.MESSAGE_TEST_5;
+import static com.sergiofah.integrationapp.UsbService.MESSAGE_TEST_1;
+import static com.sergiofah.integrationapp.UsbService.MESSAGE_TEST_2;
+import static com.sergiofah.integrationapp.UsbService.MESSAGE_TEST_3;
+import static com.sergiofah.integrationapp.UsbService.MESSAGE_TEST_4;
+import static com.sergiofah.integrationapp.UsbService.MESSAGE_TEST_5;
 
 public class MainActivity extends AppCompatActivity {
 

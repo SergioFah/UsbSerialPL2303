@@ -1,4 +1,4 @@
-<manifest package="com.felhr.serialportexamplesync"
+<manifest package="com.sergiofah.serialportexamplesync"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature android:name="android.hardware.usb.host"
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.felhr.serialportexamplesync.UsbService"
+            android:name="com.sergiofah.serialportexamplesync.UsbService"
             android:enabled="true">
         </service>
 

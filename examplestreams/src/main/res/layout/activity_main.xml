@@ -6,7 +6,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                tools:context="com.felhr.examplestreams.MainActivity">
+                tools:context="com.sergiofah.examplestreams.MainActivity">
 
     <TextView
         android:id="@+id/textViewTitle"

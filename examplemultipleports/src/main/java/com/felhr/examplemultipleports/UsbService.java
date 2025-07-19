@@ -1,4 +1,4 @@
-package com.felhr.examplemultipleports;
+package com.sergiofah.examplemultipleports;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
@@ -16,11 +16,11 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-import com.felhr.usbserial.SerialInputStream;
-import com.felhr.usbserial.SerialPortBuilder;
-import com.felhr.usbserial.SerialPortCallback;
-import com.felhr.usbserial.UsbSerialDevice;
-import com.felhr.usbserial.UsbSerialInterface;
+import com.sergiofah.usbserial.SerialInputStream;
+import com.sergiofah.usbserial.SerialPortBuilder;
+import com.sergiofah.usbserial.SerialPortCallback;
+import com.sergiofah.usbserial.UsbSerialDevice;
+import com.sergiofah.usbserial.UsbSerialInterface;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -30,16 +30,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class UsbService extends Service implements SerialPortCallback {
 
-    public static final String ACTION_USB_READY = "com.felhr.connectivityservices.USB_READY";
+    public static final String ACTION_USB_READY = "com.sergiofah.connectivityservices.USB_READY";
     public static final String ACTION_USB_ATTACHED = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
     public static final String ACTION_USB_DETACHED = "android.hardware.usb.action.USB_DEVICE_DETACHED";
-    public static final String ACTION_USB_NOT_SUPPORTED = "com.felhr.usbservice.USB_NOT_SUPPORTED";
-    public static final String ACTION_NO_USB = "com.felhr.usbservice.NO_USB";
-    public static final String ACTION_USB_PERMISSION_GRANTED = "com.felhr.usbservice.USB_PERMISSION_GRANTED";
-    public static final String ACTION_USB_PERMISSION_NOT_GRANTED = "com.felhr.usbservice.USB_PERMISSION_NOT_GRANTED";
-    public static final String ACTION_USB_DISCONNECTED = "com.felhr.usbservice.USB_DISCONNECTED";
-    public static final String ACTION_CDC_DRIVER_NOT_WORKING = "com.felhr.connectivityservices.ACTION_CDC_DRIVER_NOT_WORKING";
-    public static final String ACTION_USB_DEVICE_NOT_WORKING = "com.felhr.connectivityservices.ACTION_USB_DEVICE_NOT_WORKING";
+    public static final String ACTION_USB_NOT_SUPPORTED = "com.sergiofah.usbservice.USB_NOT_SUPPORTED";
+    public static final String ACTION_NO_USB = "com.sergiofah.usbservice.NO_USB";
+    public static final String ACTION_USB_PERMISSION_GRANTED = "com.sergiofah.usbservice.USB_PERMISSION_GRANTED";
+    public static final String ACTION_USB_PERMISSION_NOT_GRANTED = "com.sergiofah.usbservice.USB_PERMISSION_NOT_GRANTED";
+    public static final String ACTION_USB_DISCONNECTED = "com.sergiofah.usbservice.USB_DISCONNECTED";
+    public static final String ACTION_CDC_DRIVER_NOT_WORKING = "com.sergiofah.connectivityservices.ACTION_CDC_DRIVER_NOT_WORKING";
+    public static final String ACTION_USB_DEVICE_NOT_WORKING = "com.sergiofah.connectivityservices.ACTION_USB_DEVICE_NOT_WORKING";
     public static final int MESSAGE_FROM_SERIAL_PORT = 0;
     public static final int CTS_CHANGE = 1;
     public static final int DSR_CHANGE = 2;

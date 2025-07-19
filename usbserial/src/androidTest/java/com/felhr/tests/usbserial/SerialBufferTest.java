@@ -1,6 +1,6 @@
-package com.felhr.tests.usbserial;
+package com.sergiofah.tests.usbserial;
 
-import com.felhr.usbserial.SerialBuffer;
+import com.sergiofah.usbserial.SerialBuffer;
 
 import junit.framework.TestCase;
 
