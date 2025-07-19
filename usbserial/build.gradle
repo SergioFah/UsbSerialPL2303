@@ -22,6 +22,14 @@ android {
         consumerProguardFiles 'proguard-rules.pro'
     }
 
+    libraryVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.outputs.all { output ->
+                output.outputFileName = "UsbSerialPL2303-${project.VERSION_NAME}.aar"
+            }
+        }
+    }
+
     dependencies {
         implementation 'com.annimon:stream:1.2.1'
         implementation 'com.squareup.okio:okio:2.1.0'
