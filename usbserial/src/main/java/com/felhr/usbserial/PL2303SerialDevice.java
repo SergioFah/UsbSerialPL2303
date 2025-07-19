@@ -320,6 +320,10 @@ public class PL2303SerialDevice extends UsbSerialDevice
 
     private boolean openPL2303()
     {
+        Log.d(CLASS_ID, "Inicializando PL2303 - VID: 0x" +
+                Integer.toHexString(device.getVendorId()).toUpperCase() +
+                " PID: 0x" + Integer.toHexString(device.getProductId()).toUpperCase());
+
         if(connection.claimInterface(mInterface, true))
         {
             Log.i(CLASS_ID, "Interface succesfully claimed");
@@ -342,8 +346,57 @@ public class PL2303SerialDevice extends UsbSerialDevice
                 outEndpoint = endpoint;
         }
 
-        //Default Setup
+        if (inEndpoint == null || outEndpoint == null) {
+            Log.e(CLASS_ID, "Required endpoints not found");
+            return false;
+        }
+
+        if (device.getVendorId() == 1659 && device.getProductId() == 9123) {
+            Log.i(CLASS_ID, "Detectado dispositivo customizado 067B:23A3 (1659:9123) - usando sequência específica");
+            return initializeCustomDevice();
+        } else {
+            Log.i(CLASS_ID, "Usando sequência padrão PL2303");
+            return initializeStandardPL2303();
+        }
+    }
+
+    private boolean initializeCustomDevice() {
+        Log.d(CLASS_ID, "Iniciando sequência de inicialização para dispositivo 067B:23A3 (1659:9123)");
+
         byte[] buf = new byte[1];
+        int result;
+
+        Log.d(CLASS_ID, "Testando comando SET_CONTROL...");
+        result = setControlCommand(PL2303_REQTYPE_HOST2DEVICE, PL2303_SET_CONTROL_REQUEST, 0x0003, 0, null);
+        Log.d(CLASS_ID, "SET_CONTROL result: " + result);
+        if (result < 0) {
+            Log.w(CLASS_ID, "SET_CONTROL falhou, continuando...");
+            // Não retornar false ainda, tentar outros comandos
+        }
+
+        Log.d(CLASS_ID, "Testando comando SET_LINE_CODING...");
+        result = setControlCommand(PL2303_REQTYPE_HOST2DEVICE, PL2303_SET_LINE_CODING, 0x0000, 0, defaultSetLine);
+        Log.d(CLASS_ID, "SET_LINE_CODING result: " + result);
+        if (result < 0) {
+            Log.e(CLASS_ID, "SET_LINE_CODING falhou - crítico");
+            return false;
+        }
+
+        Log.d(CLASS_ID, "Testando comandos vendor básicos...");
+
+        result = setControlCommand(PL2303_REQTYPE_HOST2DEVICE_VENDOR, PL2303_VENDOR_WRITE_REQUEST, 0x0001, 0, null);
+        Log.d(CLASS_ID, "Vendor command 1 result: " + result);
+
+        result = setControlCommand(PL2303_REQTYPE_HOST2DEVICE_VENDOR, PL2303_VENDOR_WRITE_REQUEST, 0x0002, 0x0044, null);
+        Log.d(CLASS_ID, "Vendor command 2 result: " + result);
+
+        Log.i(CLASS_ID, "Inicialização customizada concluída com sucesso");
+        return true;
+    }
+
+    private boolean initializeStandardPL2303() {
+        byte[] buf = new byte[1];
+
         //Specific vendor stuff that I barely understand but It is on linux drivers, So I trust :)
         if(setControlCommand(PL2303_REQTYPE_DEVICE2HOST_VENDOR, PL2303_VENDOR_WRITE_REQUEST, 0x8484, 0, buf) < 0)
             return false;
